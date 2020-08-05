@@ -1,5 +1,5 @@
 from modules import app, cbpi
-from thread import start_new_thread
+from _thread import start_new_thread
 import logging
 import time
 import requests
@@ -12,7 +12,7 @@ def pushoverToken():
 	global pushover_token
 	pushover_token = cbpi.get_config_parameter("pushover_token", None)
 	if pushover_token is None:
-		print "INIT Pushover Token"
+		print("INIT Pushover Token")
 		try:
 			cbpi.add_config_parameter("pushover_token", "", "text", "Pushover API Token")
 		except:
@@ -22,7 +22,7 @@ def pushoverUser():
 	global pushover_user
 	pushover_user = cbpi.get_config_parameter("pushover_user", None)
 	if pushover_user is None:
-		print "INIT Pushover User Key"
+		print("INIT Pushover User Key")
 		try:
 			cbpi.add_config_parameter("pushover_user", "", "text", "Pushover User Key")
 		except:
